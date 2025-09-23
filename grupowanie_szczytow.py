@@ -1,131 +1,131 @@
-# --- Grupowanie szczytów KGP ---
+import pandas as pd
 
-# Przypisanie szczytów do regionów górskich
+# --- słownik: wysokości szczytów ---
+peak_heights = {
+    "Łysica": 614,
+    "Ślęża": 718,
+    "Kłodzka Góra": 757,
+    "Lubomir": 912,
+    "Szczeliniec Wielki": 919,
+    "Jagodna": 977,
+    "Kowadło": 989,
+    "Lackowa": 997,
+    "Czupel": 930,
+    "Biskupia Kopa": 889,
+    "Chełmiec": 851,
+    "Waligóra": 936,
+    "Skalnik": 945,
+    "Skopiec": 724,
+    "Orlica": 1084,
+    "Wielka Sowa": 1015,
+    "Wysoka Kopa": 1126,
+    "Rudawiec": 1106,
+    "Mogielica": 1171,
+    "Skrzyczne": 1257,
+    "Radziejowa": 1266,
+    "Wysoka (Pieniny)": 1050,
+    "Turbacz": 1310,
+    "Tarnica": 1346,
+    "Babia Góra": 1725,
+    "Śnieżka": 1603,
+    "Śnieżnik": 1425,
+    "Rysy": 2499,
+}
+
+# --- słownik: regiony geograficzne ---
 peak_to_region = {
-    # Tatry
-    "Rysy": "Tatry",
-
-    # Sudety
-    "Śnieżka": "Sudety",
-    "Śnieżnik": "Sudety",
-    "Wysoka Kopa": "Sudety",
+    "Łysica": "Góry Świętokrzyskie",
     "Ślęża": "Sudety",
+    "Kłodzka Góra": "Sudety",
+    "Lubomir": "Beskid Makowski",
     "Szczeliniec Wielki": "Sudety",
     "Jagodna": "Sudety",
-    "Orlica": "Sudety",
-    "Wielka Sowa": "Sudety",
-    "Kłodzka Góra": "Sudety",
     "Kowadło": "Sudety",
-    "Czarna Góra": "Sudety",
-    "Rudawiec": "Sudety",
-    "Skalnik": "Sudety",
-    "Skopiec": "Sudety",
+    "Lackowa": "Beskid Niski",
+    "Czupel": "Beskid Mały",
     "Biskupia Kopa": "Sudety",
     "Chełmiec": "Sudety",
     "Waligóra": "Sudety",
-
-    # Beskidy Zachodnie
-    "Babia Góra": "Beskidy Zachodnie",
-    "Pilsko": "Beskidy Zachodnie",
-    "Wielka Racza": "Beskidy Zachodnie",
-    "Skrzyczne": "Beskidy Zachodnie",
-    "Turbacz": "Beskidy Zachodnie",
-    "Mogielica": "Beskidy Zachodnie",
-    "Radziejowa": "Beskidy Zachodnie",
-    "Lubomir": "Beskidy Zachodnie",
-    "Czupel": "Beskidy Zachodnie",
-
-    # Beskidy Wschodnie
-    "Tarnica": "Beskidy Wschodnie",
-    "Lackowa": "Beskidy Wschodnie",
-
-    # Góry Świętokrzyskie
-    "Łysica": "Góry Świętokrzyskie",
+    "Skalnik": "Sudety",
+    "Skopiec": "Sudety",
+    "Orlica": "Sudety",
+    "Wielka Sowa": "Sudety",
+    "Wysoka Kopa": "Sudety",
+    "Rudawiec": "Sudety",
+    "Mogielica": "Beskid Wyspowy",
+    "Skrzyczne": "Beskid Śląski",
+    "Radziejowa": "Beskid Sądecki",
+    "Wysoka (Pieniny)": "Pieniny",
+    "Turbacz": "Gorce",
+    "Tarnica": "Bieszczady",
+    "Babia Góra": "Beskid Żywiecki",
+    "Śnieżka": "Sudety",
+    "Śnieżnik": "Sudety",
+    "Rysy": "Tatry",
 }
 
-# Przypisanie szczytów do kategorii wysokościowych
-peak_to_altitude_group = {
-    # Niskie <1000 m
-    "Łysica": "Niskie",
-    "Ślęża": "Niskie",
-    "Kłodzka Góra": "Niskie",
-    "Lubomir": "Niskie",
-    "Szczeliniec Wielki": "Niskie",
-    "Jagodna": "Niskie",
-    "Kowadło": "Niskie",
-    "Lackowa": "Niskie",
-    "Czupel": "Niskie",
-    "Biskupia Kopa": "Niskie",
-    "Chełmiec": "Niskie",
-    "Waligóra": "Niskie",
-    "Skalnik": "Niskie",
-    "Skopiec": "Niskie",
+# --- funkcja: grupy wysokościowe ---
+def assign_altitude_group(height: int) -> str:
+    if height < 1000:
+        return "Niskie"
+    elif height < 1500:
+        return "Średnie"
+    else:
+        return "Wysokie"
 
-    # Średnie 1000–1500 m
-    "Orlica": "Średnie",
-    "Wielka Sowa": "Średnie",
-    "Wysoka Kopa": "Średnie",
-    "Rudawiec": "Średnie",
-    "Mogielica": "Średnie",
-    "Czarna Góra": "Średnie",
-    "Skrzyczne": "Średnie",
-    "Radziejowa": "Średnie",
-    "Wysoka (Pieniny)": "Średnie",
-    "Turbacz": "Średnie",
-    "Tarnica": "Średnie",
-    "Wielka Racza": "Średnie",
-
-    # Wysokie >1500 m
-    "Babia Góra": "Wysokie",
-    "Pilsko": "Wysokie",
-    "Śnieżka": "Wysokie",
-    "Śnieżnik": "Wysokie",
-    "Rysy": "Wysokie",
-}
-
-# --- Funkcja czyszcząca nazwy szczytów z plików CSV ---
+# --- funkcja: NormName zgodne z plikami pogodowymi ---
 def clean_peak_name(name: str) -> str:
-    """
-    Normalizuje nazwy szczytów KGP do poprawnej formy (z polskimi znakami).
-    Obsługuje uproszczone nazwy z plików CSV.
-    """
     normalize_names = {
-        "LYSICA": "Łysica",
-        "SLEZA": "Ślęża",
-        "KLODZKA GORA": "Kłodzka Góra",
-        "LUBOMIR": "Lubomir",
-        "SZCZELINIEC": "Szczeliniec Wielki",
-        "JAGODNA": "Jagodna",
-        "KOWADLO": "Kowadło",
-        "LACKOWA": "Lackowa",
-        "CZUPEL": "Czupel",
-        "BISKUPIA KOPA": "Biskupia Kopa",
-        "CHELMIEC": "Chełmiec",
-        "WALIGORA": "Waligóra",
-        "SKALNIK": "Skalnik",
-        "SKOPIEC": "Skopiec",
-        "ORLICA": "Orlica",
-        "WIELKA SOWA": "Wielka Sowa",
-        "WYSOKA KOPA": "Wysoka Kopa",
-        "RUDAWIEC": "Rudawiec",
-        "MOGIELICA": "Mogielica",
-        "SKRZYCZNE": "Skrzyczne",
-        "RADZIEJOWA": "Radziejowa",
-        "WYSOKA PIENINY": "Wysoka (Pieniny)",
-        "TURBACZ": "Turbacz",
-        "TARNICA": "Tarnica",
-        "WIELKA RACZA": "Wielka Racza",
-        "BABIA GORA": "Babia Góra",
-        "SNIEZKA": "Śnieżka",
-        "RYSY": "Rysy",
-        "SNIEZNIK": "Śnieżnik"   # dodatkowo – nie jest w oficjalnej KGP
+        "Łysica": "LYSICA",
+        "Ślęża": "SLEZA",
+        "Kłodzka Góra": "KLODZKA_GORA",
+        "Lubomir": "LUBOMIR",
+        "Szczeliniec Wielki": "SZCZELINIEC",
+        "Jagodna": "JAGODNA",
+        "Kowadło": "KOWADLO",
+        "Lackowa": "LACKOWA",
+        "Czupel": "CZUPEL",
+        "Biskupia Kopa": "BISKUPIA_KOPA",
+        "Chełmiec": "CHELMIEC",
+        "Waligóra": "WALIGORA",
+        "Skalnik": "SKALNIK",
+        "Skopiec": "SKOPIEC",
+        "Orlica": "ORLICA",
+        "Wielka Sowa": "WIELKA_SOWA",
+        "Wysoka Kopa": "WYSOKA_KOPA",
+        "Rudawiec": "RUDAWIEC",
+        "Mogielica": "MOGIELICA",
+        "Skrzyczne": "SKRZYCZNE",
+        "Radziejowa": "RADZIEJOWA",
+        "Wysoka (Pieniny)": "WYSOKA_PIENINY",
+        "Turbacz": "TURBACZ",
+        "Tarnica": "TARNICA",
+        "Babia Góra": "BABIA_GORA",
+        "Śnieżka": "SNIEZKA",
+        "Śnieżnik": "SNIEZNIK",
+        "Rysy": "RYSY",
     }
+    return normalize_names.get(name, name.upper())
 
-    # ujednolicamy wejście: wielkie litery + spacje zamiast podkreśleń
-    name = name.upper().replace("_", " ")
+# --- eksport metadanych ---
+if __name__ == "__main__":
+    df_meta = pd.DataFrame([
+        {
+            "Szczyt": peak,
+            "Wysokość (m n.p.m.)": peak_heights[peak],
+            "Region": peak_to_region[peak],
+            "Grupa wysokościowa": assign_altitude_group(peak_heights[peak]),
+            "NormName": clean_peak_name(peak),  # 👈 kolumna zgodna z plikami pogodowymi
+        }
+        for peak in peak_heights.keys()
+    ])
+    df_meta = df_meta.sort_values("Szczyt").reset_index(drop=True)
+    df_meta.insert(0, "ID", df_meta.index + 1)
 
-    # zwracamy poprawną nazwę, jeśli jest w słowniku
-    return normalize_names.get(name, name)
+    df_meta.to_excel("KGP_metadata.xlsx", index=False)
+    df_meta.to_csv("KGP_metadata.csv", index=False, encoding="utf-8-sig")
+
+    print("✅ Zapisano KGP_metadata.xlsx oraz CSV (28 szczytów).")
 
 
 
