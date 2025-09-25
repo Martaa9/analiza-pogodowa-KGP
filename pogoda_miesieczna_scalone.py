@@ -28,7 +28,7 @@ for file in input_dir.glob("miesiac_*.csv"):
         df["region"] = meta_row["Region"].values[0]
         df["height_group"] = meta_row["Grupa wysokościowa"].values[0]
     else:
-        print(f"⚠️ Brak dopasowania dla '{peak_norm}' (plik {file.name})")
+        print(f"Brak dopasowania dla '{peak_norm}' (plik {file.name})")
         df["ID"] = None
         df["Szczyt"] = peak_norm
         df["NormName"] = peak_norm

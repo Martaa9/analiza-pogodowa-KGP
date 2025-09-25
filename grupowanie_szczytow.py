@@ -115,7 +115,7 @@ if __name__ == "__main__":
             "Wysokość (m n.p.m.)": peak_heights[peak],
             "Region": peak_to_region[peak],
             "Grupa wysokościowa": assign_altitude_group(peak_heights[peak]),
-            "NormName": clean_peak_name(peak),  # 👈 kolumna zgodna z plikami pogodowymi
+            "NormName": clean_peak_name(peak),  # kolumna zgodna z plikami pogodowymi
         }
         for peak in peak_heights.keys()
     ])
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     df_meta.to_excel("KGP_metadata.xlsx", index=False)
     df_meta.to_csv("KGP_metadata.csv", index=False, encoding="utf-8-sig")
 
-    print("✅ Zapisano KGP_metadata.xlsx oraz CSV (28 szczytów).")
+    print("Zapisano KGP_metadata.xlsx oraz CSV (28 szczytów).")
 
 
 
