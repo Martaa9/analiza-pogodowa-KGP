@@ -34,34 +34,46 @@ peak_heights = {
 
 # --- słownik: regiony geograficzne ---
 peak_to_region = {
-    "Łysica": "Góry Świętokrzyskie",
-    "Ślęża": "Sudety",
-    "Kłodzka Góra": "Sudety",
-    "Lubomir": "Beskid Makowski",
-    "Szczeliniec Wielki": "Sudety",
+
+    # Tatry
+    "Rysy": "Tatry",
+
+    # Sudety
+    "Śnieżka": "Sudety",
+    "Śnieżnik": "Sudety",
+    "Skopiec": "Sudety",
+    "Chełmiec": "Sudety",
+    "Biskupia Kopa": "Sudety",
     "Jagodna": "Sudety",
     "Kowadło": "Sudety",
-    "Lackowa": "Beskid Niski",
-    "Czupel": "Beskid Mały",
-    "Biskupia Kopa": "Sudety",
-    "Chełmiec": "Sudety",
+    "Kłodzka Góra": "Sudety",
+    "Szczeliniec Wielki": "Sudety",
     "Waligóra": "Sudety",
     "Skalnik": "Sudety",
-    "Skopiec": "Sudety",
     "Orlica": "Sudety",
     "Wielka Sowa": "Sudety",
     "Wysoka Kopa": "Sudety",
     "Rudawiec": "Sudety",
-    "Mogielica": "Beskid Wyspowy",
-    "Skrzyczne": "Beskid Śląski",
-    "Radziejowa": "Beskid Sądecki",
-    "Wysoka (Pieniny)": "Pieniny",
-    "Turbacz": "Gorce",
+    "Ślęża": "Sudety",
+
+    # Beskidy
+    "Babia Góra": "Beskidy",
+    "Skrzyczne": "Beskidy",
+    "Radziejowa": "Beskidy",
+    "Turbacz": "Beskidy",
+    "Mogielica": "Beskidy",
+    "Lackowa": "Beskidy",
+    "Czupel": "Beskidy",
+    "Lubomir": "Beskidy",
+
+    # Bieszczady
     "Tarnica": "Bieszczady",
-    "Babia Góra": "Beskid Żywiecki",
-    "Śnieżka": "Sudety",
-    "Śnieżnik": "Sudety",
-    "Rysy": "Tatry",
+
+    # Pieniny
+    "Wysoka (Pieniny)": "Pieniny",
+
+    # Góry Świętokrzyskie
+    "Łysica": "Góry Świętokrzyskie",
 }
 
 # --- funkcja: grupy wysokościowe ---
