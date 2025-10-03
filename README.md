@@ -15,28 +15,21 @@ Projekt analizuje warunki pogodowe na 28 szczytach Korony Gór Polski (KGP) w la
 
 # Dane
 
-•	Źródło: Open-Meteo API
-•	Okres analizy: 2020–2024
-•	Agregacja: dane dzienne przekształcone do wartości miesięcznych
-•	Zmienne: średnia, maksymalna i minimalna temperatura, suma opadów deszczu i śniegu, prędkość wiatru, zachmurzenie
+- Źródło: Open-Meteo API
+- Okres analizy: 2020–2024
+- Agregacja: dane dzienne przekształcone do wartości miesięcznych
+- Zmienne: średnia, maksymalna i minimalna temperatura, suma opadów deszczu i śniegu, prędkość wiatru, zachmurzenie
 
 Dane Open-Meteo mają charakter siatkowy, co oznacza, że wartości pogodowe są wyznaczane na podstawie interpolacji z modeli numerycznych w regularnych punktach siatki, a nie pochodzą bezpośrednio ze stacji pomiarowych, co może wpływać na ich dokładność.
 Dla Śnieżki, jedynego szczytu KGP na którym znajduje się obserwatorium meteorologiczne, przeprowadzono porównanie danych siatkowych Open-Meteo z danymi stacyjnymi IMGW. W badanym okresie średnia różnica wyniosła –0,41°C. Wartość błędu RMSE, czyli przeciętne odchylenie wartości siatkowych od pomiarów stacyjnych, wynosiło około 1,4°C. Na tej podstawie uznano, że nie ma potrzeby stosowania korekty temperatur dla wszystkich szczytów i dane Open-Meteo można uznać za wystarczająco wiarygodne do celów projektu.
 
 # Metody
 
-•	Opracowanie profilu klimatycznego każdego szczytu
-•	Wykresy sezonowości temperatur, opadów i wiatru
-•	Analizy porównawcze regionów i grup wysokościowych
-•	Rankingi szczytów pod kątem ekstremalnych warunków pogodowych
-•	Heatmapa wskaźnika komfortu
-
-# Rezultaty
-•	Profil klimatyczny każdego z 28 szczytów
-•	Porównania między regionami i grupami wysokościowymi
-•	Rankingi najbardziej deszczowych, wietrznych i zimnych szczytów
-•	Wyliczenie wskaźnika komfortu i identyfikacja najbardziej sprzyjających szczytów
-•	Zbiór wykresów prezentujących warunki pogodowe
+- Opracowanie profilu klimatycznego każdego szczytu
+- Wykresy sezonowości temperatur, opadów i wiatru
+- Analizy porównawcze regionów i grup wysokościowych
+- Rankingi szczytów pod kątem ekstremalnych warunków pogodowych
+- Heatmapa wskaźnika komfortu
 
 # Wnioski z analizy
 
@@ -59,7 +52,7 @@ Najważniejsze obserwacje to:
 
 Wszystkie zmienne zostały znormalizowane i przeskalowane do wspólnej skali (0–100), a następnie zsumowane z równymi wagami, tworząc syntetyczny wskaźnik komfortu dla każdego szczytu i miesiąca.
 
-![Heatmapa komfortu](plots/comfort_heatmap.png)  
+![Heatmapa komfortu](D:\Programowanie\analiza-pogodowa-KGP\plots\heatmap_all_peaks_colored.png)  
 
 - Najbardziej komfortowe warunki występują na szczytach średnich wysokości (np. Orlica, Mogielica, Turbacz).  
 - Szczyty wysokie (Rysy, Śnieżka, Babia Góra) mają wyraźnie niższy wskaźnik komfortu zimą, co potwierdza ich bardziej ekstremalne warunki.  
