@@ -61,7 +61,7 @@ Wszystkie zmienne zostały przeskalowane do wspólnej skali 0–100, a następni
 ---
 
 ### 2. Porównanie regionów i grup wysokościowych
-![Porównanie regionów i wysokości](plots/regions_groups_comparison.png)  
+![Porównanie regionów i wysokości](plots/regions%20and%20heights/regions_heights_comparison.png)  
 
 - Tatry są najzimniejsze i najbardziej śnieżne spośród analizowanych regionów.  
 - Sudety wyróżniają się największą wietrznością oraz dużą zmiennością opadów.  
