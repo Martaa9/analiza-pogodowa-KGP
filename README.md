@@ -95,4 +95,8 @@ Podsumowanie: Rysy charakteryzują się chłodnym klimatem, dużymi opadami i si
 | **Najcieplejsze (°C)**         | Czupel (9.2)     | Kłodzka Góra (9.1) | Chełmiec (9.1)   |
 | **Najzimniejsze (°C)**         | Rysy (–2.7)      | Śnieżka (1.6)    | Babia Góra (1.6) |
 
-# Metody
+# Możliwe dalsze kierunki rozwoju
+
+- interaktywny dashboard w Power BI, pozwalający filtrować szczyty według regionów i warunków pogodowych,
+- stworzenie map wizualizujących z naniesionymi szczytami i wskaźnikami,
+- rozszerzenie analizy o dłuższy okres.
