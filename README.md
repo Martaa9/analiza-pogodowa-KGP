@@ -55,32 +55,44 @@ Wszystkie zmienne zostały przeskalowane do wspólnej skali 0–100, a następni
 ![Heatmapa komfortu](plots/comfort/heatmap_all_peaks_colored.png)  
 
 - Najbardziej komfortowe warunki w latach 2020–2024 występowały na szczytach niskich i średnich – najwyższe średnie wartości wskaźnika osiągnęły Chełmiec, Kłodzka Góra, Czupel, Biskupia Kopa i Turbacz.
-- Szczyty wysokie (Rysy, Śnieżka, Babia Góra) mają wyraźnie niższy wskaźnik komfortu zimą, co potwierdza ich bardziej ekstremalne warunki.  
-- Najkorzystniejsze miesiące dla większości szczytów to lipiec i sierpień.  
+- Szczyty wysokie (Rysy, Śnieżka, Babia Góra) mają wyraźnie niższy wskaźnik komfortu, co potwierdza ich bardziej ekstremalne warunki. 
+- Najkorzystniejszym miesiącem dla wędrówek jest lipiec, wskaźnik utrzymuje wysokie wartości także w czerwcu i sierpniu. Najtrudniejsze warunki panują zimą, szczególnie w lutym, kiedy wskaźnik osiąga najniższe wartości w roku.
 
 ---
 
 ### 2. Porównanie regionów i grup wysokościowych
 ![Porównanie regionów i wysokości](plots/regions%20and%20heights/regions_heights_comparison.png)  
-
-- Tatry są najzimniejsze i najbardziej śnieżne spośród analizowanych regionów.  
-- Sudety wyróżniają się największą wietrznością oraz dużą zmiennością opadów.  
-- Beskidy i Góry Świętokrzyskie mają bardziej umiarkowany i przewidywalny klimat.  
-- Analiza grup wysokościowych potwierdza: szczyty wysokie są zimniejsze i bardziej wilgotne, natomiast średnie wysokości mają najbardziej sprzyjające warunki turystyczne.  
+  
+- Analiza grup wysokościowych potwierdza: szczyty wysokie są zimniejsze i bardziej wilgotne, natomiast średnie wysokości mają najbardziej sprzyjające warunki turystyczne.
+- Przebieg roczny temperatury jest podobny we wszystkich regionach i grupach wysokościowych: wzrost od stycznia do lipca i spadek od sierpnia do grudnia. Różnice między regionami polegają głównie na poziomie temperatury (Tatry najchłodniejsze, Góry Świętokrzyskie i Pieniny najcieplejsze).
+- Opady są najwyższe od czerwca do sierpnia i najniższe w marcu–kwietniu. Sezonowy cykl jest podobny we wszystkich regionach i grupach wysokościowych, ale Tatry notują wyższy poziom opadów niż pozostałe pasma.
 
 ---
 
-### 3. Roczny cykl pogodowy – przykład: Rysy
+### 3. Roczny cykl pogodowy na przykładzie Rysów
 ![Sezonowość Rysy](plots/peaks/Rysy_all.png)  
 
-- Rysy pokazują wyraźny kontrast sezonowy: długa i mroźna zima (październik–maj) oraz krótki, ale stabilny sezon letni.  
-- Zimą dominują intensywne opady śniegu, niskie temperatury i wysokie zachmurzenie.  
-- Latem występuje więcej słońca, wyższe temperatury i względnie mniejsze opady śniegu, co czyni lipiec i sierpień najlepszym okresem na wycieczki w Tatry.  
+- Temperatura: średnia roczna ma typowy przebieg – najniższe wartości zimą (–10 do –12°C w styczniu i lutym), a najwyższe latem (ok. 7°C w lipcu).
+- Opady: największe sumy notowane są latem (ponad 140 mm w czerwcu–sierpniu), a najmniejsze wczesną wiosną (marzec–kwiecień).
+- Opady śniegu: dominują zimą (grudzień–marzec, ponad 50–100 mm miesięcznie), zanikają całkowicie jedynie w lipcu i sierpniu.
+- Wiatr: maksymalne prędkości utrzymują się na wysokim poziomie cały rok (11–14 m/s), z nieco silniejszymi epizodami zimą i wczesną wiosną.
+- Zachmurzenie: najwyższe w zimie (80–85%), najniższe latem (ok. 60%).
+- Nasłonecznienie: maksimum przypada na maj–lipiec (ponad 40 000 h w skali miesiąca w danych siatkowych), najniższe wartości są zimą.
+
+Podsumowanie: Rysy charakteryzują się chłodnym klimatem, dużymi opadami i silnym wiatrem. Najkorzystniejsze warunki panują w lipcu, ale nawet wtedy średnia temperatura nie przekracza 7°C.
 
 ---
 
-### 4. Podsumowanie ogólne
-- **Tatry** → najzimniejsze i najbardziej śnieżne.  
-- **Sudety** → najbardziej wietrzne.  
-- **Średnie szczyty (1000–1500 m)** → najbardziej komfortowe warunki dla turystów.  
-- **Najlepsze miesiące** na górskie wędrówki to lipiec i sierpień.  
+### 4. Ranking warunków pogodowych
+
+| Kategoria                      | 1 miejsce        | 2 miejsce        | 3 miejsce        |
+|--------------------------------|------------------|------------------|------------------|
+| **Najbardziej deszczowe (mm)** | Tarnica (108.3)  | Rudawiec (107.7) | Śnieżnik (107.7) |
+| **Najbardziej śnieżne (mm)**   | Rysy (24.7)      | Śnieżka (20.1)   | Tarnica (19.8)   |
+| **Najbardziej wietrzne (m/s)** | Chełmiec (22.3)  | Waligóra (20.9)  | Ślęża (20.1)     |
+| **Najbardziej słoneczne (h)**  | Rysy (28976.2)   | Radziejowa (27551.8) | Ślęża (27297.1) |
+| **Najbardziej pochmurne (%)**  | Śnieżka (73.2)   | Rudawiec (72.0)  | Śnieżnik (72.0)  |
+| **Najcieplejsze (°C)**         | Czupel (9.2)     | Kłodzka Góra (9.1) | Chełmiec (9.1)   |
+| **Najzimniejsze (°C)**         | Rysy (–2.7)      | Śnieżka (1.6)    | Babia Góra (1.6) |
+
+# Metody
