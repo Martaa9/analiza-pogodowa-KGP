@@ -44,7 +44,7 @@ Najważniejsze obserwacje to:
 
 ### 1. Heatmapa wskaźnika komfortu
 
-**Wskaźnik komfortu** został zbudowany w oparciu o cztery elementy:
+Wskaźnik komfortu został zbudowany w oparciu o cztery elementy:
 - średnia temperatura (najwyższy komfort przy wartościach umiarkowanych, ok. 10–20°C),
 - suma opadów (niższe opady oznaczają wyższy komfort),
 - prędkość wiatru (najwyższy komfort przy niskich wartościach),
@@ -54,7 +54,7 @@ Wszystkie zmienne zostały przeskalowane do wspólnej skali 0–100, a następni
 
 ![Heatmapa komfortu](plots/comfort/heatmap_all_peaks_colored.png)  
 
-- Najbardziej komfortowe warunki występują na szczytach średnich wysokości (np. Orlica, Mogielica, Turbacz).  
+- Najbardziej komfortowe warunki w latach 2020–2024 występowały na szczytach niskich i średnich – najwyższe średnie wartości wskaźnika osiągnęły Chełmiec, Kłodzka Góra, Czupel, Biskupia Kopa i Turbacz.
 - Szczyty wysokie (Rysy, Śnieżka, Babia Góra) mają wyraźnie niższy wskaźnik komfortu zimą, co potwierdza ich bardziej ekstremalne warunki.  
 - Najkorzystniejsze miesiące dla większości szczytów to lipiec i sierpień.  
 
