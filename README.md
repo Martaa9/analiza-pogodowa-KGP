@@ -71,7 +71,7 @@ Wszystkie zmienne zostały przeskalowane do wspólnej skali 0–100, a następni
 ---
 
 ### 3. Roczny cykl pogodowy – przykład: Rysy
-![Sezonowość Rysy](plots/rysy_cycle.png)  
+![Sezonowość Rysy](plots/peaks/Rysy_all.png)  
 
 - Rysy pokazują wyraźny kontrast sezonowy: długa i mroźna zima (październik–maj) oraz krótki, ale stabilny sezon letni.  
 - Zimą dominują intensywne opady śniegu, niskie temperatury i wysokie zachmurzenie.  
