@@ -52,7 +52,7 @@ Najważniejsze obserwacje to:
 
 Wszystkie zmienne zostały znormalizowane i przeskalowane do wspólnej skali (0–100), a następnie zsumowane z równymi wagami, tworząc syntetyczny wskaźnik komfortu dla każdego szczytu i miesiąca.
 
-![Heatmapa komfortu](D:\Programowanie\analiza-pogodowa-KGP\plots\heatmap_all_peaks_colored.png)  
+![Heatmapa komfortu](plots/comfort/heatmap_all_peaks_colored.png)  
 
 - Najbardziej komfortowe warunki występują na szczytach średnich wysokości (np. Orlica, Mogielica, Turbacz).  
 - Szczyty wysokie (Rysy, Śnieżka, Babia Góra) mają wyraźnie niższy wskaźnik komfortu zimą, co potwierdza ich bardziej ekstremalne warunki.  
