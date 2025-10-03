@@ -45,12 +45,12 @@ Najważniejsze obserwacje to:
 ### 1. Heatmapa wskaźnika komfortu
 
 **Wskaźnik komfortu** został zbudowany w oparciu o cztery elementy:
-- średnia temperatura (im bliżej umiarkowanych wartości, tym wyższy komfort),
-- suma opadów (niższe opady = wyższy komfort),
-- prędkość wiatru (niższe wartości = wyższy komfort),
+- średnia temperatura (najwyższy komfort przy wartościach umiarkowanych, ok. 10–20°C),
+- suma opadów (niższe opady oznaczają wyższy komfort),
+- prędkość wiatru (najwyższy komfort przy niskich wartościach),
 - zachmurzenie (średnie wartości uznane za najbardziej korzystne).
 
-Wszystkie zmienne zostały znormalizowane i przeskalowane do wspólnej skali (0–100), a następnie zsumowane z równymi wagami, tworząc syntetyczny wskaźnik komfortu dla każdego szczytu i miesiąca.
+Wszystkie zmienne zostały przeskalowane do wspólnej skali 0–100, a następnie połączone z równymi wagami. W ten sposób powstał syntetyczny wskaźnik komfortu wyznaczony osobno dla każdego szczytu i miesiąca.
 
 ![Heatmapa komfortu](plots/comfort/heatmap_all_peaks_colored.png)  
 
