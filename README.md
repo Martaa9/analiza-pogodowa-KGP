@@ -75,7 +75,7 @@ Wszystkie zmienne zostały przeskalowane do wspólnej skali 0–100, a następni
 - Temperatura: średnia roczna ma typowy przebieg – najniższe wartości zimą (–10 do –12°C w styczniu i lutym), a najwyższe latem (ok. 7°C w lipcu).
 - Opady: największe sumy notowane są latem (ponad 140 mm w czerwcu–sierpniu), a najmniejsze wczesną wiosną (marzec–kwiecień).
 - Opady śniegu: dominują zimą (grudzień–marzec, ponad 50–100 mm miesięcznie), zanikają całkowicie jedynie w lipcu i sierpniu.
-- Wiatr: maksymalne prędkości utrzymują się na wysokim poziomie cały rok (11–14 m/s), z nieco silniejszymi epizodami zimą i wczesną wiosną.
+- Wiatr: maksymalne prędkości utrzymują się na wysokim poziomie cały rok (11–14 km/h), z nieco silniejszymi epizodami zimą i wczesną wiosną.
 - Zachmurzenie: najwyższe w zimie (80–85%), najniższe latem (ok. 60%).
 - Nasłonecznienie: maksimum przypada na maj–lipiec (ponad 40 000 h w skali miesiąca w danych siatkowych), najniższe wartości są zimą.
 
@@ -88,8 +88,8 @@ Podsumowanie: Rysy charakteryzują się chłodnym klimatem, dużymi opadami i si
 | Kategoria                      | 1 miejsce        | 2 miejsce        | 3 miejsce        |
 |--------------------------------|------------------|------------------|------------------|
 | **Najbardziej deszczowe (mm)** | Tarnica (108.3)  | Rudawiec (107.7) | Śnieżnik (107.7) |
-| **Najbardziej śnieżne (mm)**   | Rysy (24.7)      | Śnieżka (20.1)   | Tarnica (19.8)   |
-| **Najbardziej wietrzne (m/s)** | Chełmiec (22.3)  | Waligóra (20.9)  | Ślęża (20.1)     |
+| **Najbardziej śnieżne (cm)**   | Rysy (24.7)      | Śnieżka (20.1)   | Tarnica (19.8)   |
+| **Najbardziej wietrzne (km/h)** | Chełmiec (22.3)  | Waligóra (20.9)  | Ślęża (20.1)     |
 | **Najbardziej słoneczne (h)**  | Rysy (28976.2)   | Radziejowa (27551.8) | Ślęża (27297.1) |
 | **Najbardziej pochmurne (%)**  | Śnieżka (73.2)   | Rudawiec (72.0)  | Śnieżnik (72.0)  |
 | **Najcieplejsze (°C)**         | Czupel (9.2)     | Kłodzka Góra (9.1) | Chełmiec (9.1)   |
