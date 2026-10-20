@@ -94,6 +94,8 @@ Podsumowanie: Rysy wyróżniają się niskimi temperaturami i znacznymi opadami.
 
 Uzupełnieniem analizy wykonanej w Pythonie jest dwustronicowy, interaktywny dashboard Power BI. Umożliwia porównywanie warunków pogodowych na szczytach oraz analizę ich sezonowości w latach 2020–2024.
 
+**[📊 Pobierz interaktywny dashboard Power BI](dashboard/Dashboard%20-%20pogoda.pbix)**
+
 1. Przegląd warunków pogodowych
 
 Pierwsza strona prezentuje ogólny obraz warunków na szczytach KGP:
@@ -105,6 +107,7 @@ Pierwsza strona prezentuje ogólny obraz warunków na szczytach KGP:
 
 Raport umożliwia filtrowanie danych według zakresu lat, grupy wysokościowej i szczytu. 
 
+![Przegląd warunków pogodowych KGP](dashboard/przeglad.png)
 
 2. Sezonowość warunków pogodowych
 
@@ -117,5 +120,6 @@ Druga strona pozwala analizować odchylenia średnich wartości miesięcznych od
 
 Odchylenia służą tutaj do opisu sezonowości, a nie anomalii względem wieloletniej normy klimatycznej.
 
+![Sezonowość warunków pogodowych KGP](dashboard/sezonowosc.png)
 
 
