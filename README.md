@@ -4,23 +4,22 @@
 
 Projekt obejmuje analizę warunków pogodowych na 28 szczytach Korony Gór Polski (KGP) w latach 2020–2024. Na podstawie danych z Open-Meteo, przetworzonych i przeanalizowanych w Pythonie, porównano temperaturę, opady, wiatr, zachmurzenie i nasłonecznienie w różnych regionach i grupach wysokościowych.
 
-Celem projektu było rozpoznanie sezonowości warunków pogodowych, wskazanie szczytów o najbardziej wymagających warunkach oraz ocena, które miesiące mogą sprzyjać górskim wędrówkom. Wyniki zaprezentowano na wykresach oraz w interaktywnym dashboardzie Power BI, umożliwiającym porównywanie szczytów i analizę odchyleń sezonowych.
+Celem projektu było zbadanie sezonowości warunków pogodowych, wskazanie szczytów o najbardziej wymagających warunkach oraz określenie miesięcy sprzyjających górskim wędrówkom.
+
+Wyniki przedstawiono na wykresach w Pythonie oraz w dashboardzie Power BI.
 
 # Cele analizy
 
-1.	Określenie najbardziej deszczowych miesięcy dla poszczególnych szczytów.
-2.	Analiza sezonowości temperatur, opadów, wiatru i pozostałych parametrów pogodowych.
-3.	Porównanie różnic między regionami (Tatry, Sudety, Beskidy, Góry Świętokrzyskie, Pieniny).
-4.	Porównanie szczytów w grupach wysokościowych (<1000 m, 1000–1500 m, >1500 m).
-5.	Wskazanie szczytów o najbardziej wymagających warunkach pogodowych.
-6.	Wyciągnięcie praktycznych wniosków przydatnych przy planowaniu wycieczek.
-7. Udostępnienie wyników w interaktywnym raporcie Power BI.
+1. Zbadanie sezonowych zmian temperatur, opadów i pozostałych parametrów pogodowych.
+2. Porównanie warunków pogodowych pomiędzy szczytami, regionami i grupami wysokościowymi.
+3. Wskazanie szczytów o najbardziej wymagających warunkach.
+4. Ocena, które miesiące mogą oferować najkorzystniejsze warunki do górskich wędrówek.
 
 # Dane
 
 - Źródło: Open-Meteo API
 - Okres analizy: 2020–2024
-- Zakres: 28 szczytów Korony Gór Polski.
+- Zakres: 28 szczytów Korony Gór Polski
 - Agregacja: dane dobowe przekształcone do wartości miesięcznych
 - Zmienne: średnia, minimalna i maksymalna temperatura dobowa (°C), suma opadów (mm), opad śniegu (cm), maksymalna dobowa prędkość wiatru (km/h), czas nasłonecznienia i zachmurzenie (%)
 
@@ -29,9 +28,9 @@ Dla Śnieżki, jedynego szczytu KGP na którym znajduje się obserwatorium meteo
 
 # Metody i narzędzia 
 
-- Python (pandas, requests, matplotlib): pobranie danych z API, przygotowanie miesięcznych agregacji, porównania i wizualizacje.
-- Analiza danych: profile pogodowe szczytów, sezonowość, rankingi, porównania regionów i grup wysokościowych oraz wskaźnik komfortu.
-- Power BI i DAX: interaktywny raport z filtrami, dynamicznymi miarami, rankingami i heatmapą odchyleń sezonowych.
+- **Python (pandas, requests, matplotlib)** – pobranie danych z API, przygotowanie miesięcznych agregacji, analiza i wizualizacja.
+- **Analiza danych** – badanie sezonowości, porównania szczytów i regionów, rankingi oraz wskaźnik komfortu pogodowego.
+- **Power BI i DAX** – interaktywny dashboard umożliwiający porównywanie szczytów i analizę sezonowych odchyleń.
 
 # Wnioski z analizy
 
@@ -109,7 +108,7 @@ Pierwsza strona prezentuje ogólny obraz warunków na szczytach KGP:
 
 Raport umożliwia filtrowanie danych według zakresu lat, grupy wysokościowej i szczytu. 
 
-3. Sezonowość warunków pogodowych
+2. Sezonowość warunków pogodowych
 
 ![Sezonowość warunków pogodowych KGP](dashboard/sezonowosc.png)
 
