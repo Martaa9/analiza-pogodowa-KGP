@@ -34,50 +34,51 @@ Dla Śnieżki, jedynego szczytu KGP na którym znajduje się obserwatorium meteo
 
 # Wnioski z analizy
 
-Analiza umożliwiła opracowanie profilu pogodowego każdego z 28 szczytów, porównanie regionów i grup wysokościowych oraz przygotowanie rankingów najbardziej deszczowych, wietrznych i zimnych szczytów. Najważniejsze wyniki przedstawiono poniżej.
+### 1. Wskaźnik komfortu pogodowego
 
-### 1. Heatmapa wskaźnika komfortu
-
-Wskaźnik komfortu został zbudowany w oparciu o cztery elementy:
-- średnia temperatura (najwyższy komfort przy wartościach umiarkowanych, ok. 10–20°C),
-- suma opadów (niższe opady oznaczają wyższy komfort),
+Na potrzeby projektu opracowano autorski wskaźnik komfortu pogodowego, pozwalający porównać warunki na poszczególnych szczytach Korony Gór Polski.
+Został on zbudowany w oparciu o cztery elementy:
+- temperaturę (najwyższy komfort przy umiarkowanych wartościach, 10–20°C),
+- opady (im niższe, tym wyższy komfort),
 - prędkość wiatru (najwyższy komfort przy niskich wartościach),
-- zachmurzenie (średnie wartości uznane za najbardziej korzystne).
+- zachmurzenie (za najbardziej korzystne uznano umiarkowane zachmurzenie).
 
-Wszystkie zmienne zostały przeskalowane do wspólnej skali 0–100, a następnie połączone z równymi wagami. W ten sposób powstał syntetyczny wskaźnik komfortu wyznaczony osobno dla każdego szczytu i miesiąca.
+Wszystkie zmienne przeskalowano do wspólnego zakresu 0–100, a następnie połączono z równymi wagami. Uzyskano w ten sposób wskaźnik umożliwiający porównanie komfortu pogodowego pomiędzy szczytami i miesiącami.
 
 ![Heatmapa komfortu](plots/comfort/heatmap_all_peaks_colored.png)  
 
 - Najbardziej komfortowe warunki w latach 2020–2024 występowały na szczytach niskich i średnich – najwyższe średnie wartości wskaźnika osiągnęły Chełmiec, Kłodzka Góra, Czupel, Biskupia Kopa i Turbacz.
-- Szczyty wysokie (Rysy, Śnieżka, Babia Góra) osiągały wyraźnie niższe wartości wskaźnika.
-- Najkorzystniej wypadł lipiec; wysokie wartości występowały również w czerwcu i sierpniu. Najtrudniejsze warunki według przyjętej metody pojawiały się zimą, szczególnie w lutym.
+- Szczyty wysokie (Rysy, Śnieżka, Babia Góra) uzyskały wyraźnie niższe wartości wskaźnika.
+- Najkorzystniejszym miesiącem według przyjętego wskaźnika był lipiec. Dobre wyniki osiągały również czerwiec i sierpień, natomiast najniższe wartości przypadały na okres zimowy, szczególnie luty.
 
 ---
 
 ### 2. Porównanie regionów i grup wysokościowych
 ![Porównanie regionów i wysokości](plots/regions%20and%20heights/regions_heights_comparison.png)  
   
-- Szczyty wysokie są przeciętnie zimniejsze i bardziej wilgotne, natomiast na średnich wysokościach występowały warunki korzystniejsze według przyjętego wskaźnika komfortu.
-- Przebieg roczny temperatury jest podobny we wszystkich regionach i grupach wysokościowych: wzrost od stycznia do lipca i spadek od sierpnia do grudnia. Różnice między regionami polegają głównie na poziomie temperatury (Tatry najchłodniejsze, Góry Świętokrzyskie i Pieniny najcieplejsze).
-- Opady są najwyższe od czerwca do sierpnia i najniższe w marcu–kwietniu. Sezonowy cykl jest podobny we wszystkich regionach i grupach wysokościowych, ale Tatry notują wyższy poziom opadów niż pozostałe pasma.
+- Wysokość szczytu ma wyraźny związek z warunkami pogodowymi – wyżej położone szczyty charakteryzowały się niższymi temperaturami i na ogół większymi sumami opadów.
+- Największe różnice między regionami dotyczyły poziomu temperatur. Najchłodniejsze były Tatry, natomiast najwyższe średnie temperatury występowały w Górach Świętokrzyskich i Pieninach. Pomimo tych różnic roczny przebieg temperatury był podobny we wszystkich regionach.
+- Opady wykazywały wyraźną sezonowość – najwyższe miesięczne sumy przypadały zazwyczaj na okres od czerwca do sierpnia, a najniższe na marzec i kwiecień. Tatry wyróżniały się większymi opadami niż pozostałe analizowane regiony.
 
 ---
 
 ### 3. Roczny cykl pogodowy na przykładzie Rysów
 ![Sezonowość Rysy](plots/peaks/Rysy_all.png)  
 
-- Temperatura: średnia roczna ma typowy przebieg – najniższe wartości zimą (–10 do –12°C w styczniu i lutym), a najwyższe latem (ok. 7°C w lipcu).
-- Opady: największe sumy notowane są latem (ponad 140 mm w czerwcu–sierpniu), a najmniejsze wczesną wiosną (marzec–kwiecień).
-- Opady śniegu: dominują zimą (grudzień–marzec, ponad 50–100 mm miesięcznie), zanikają całkowicie jedynie w lipcu i sierpniu.
-- Wiatr: średnia z dobowych maksymalnych prędkości wiatru wynosiła w zależności od miesiąca około 10–14 km/h.
-- Zachmurzenie: najwyższe w zimie (80–85%), najniższe latem (ok. 60%).
-- Nasłonecznienie: maksimum przypada na maj–lipiec (ponad 40 000 h w skali miesiąca w danych siatkowych), najniższe wartości są zimą.
+- Temperatura: najniższe średnie wartości występowały w styczniu i lutym (od –10 do –12°C), a najwyższe w lipcu (około 7°C).
+- Opady: największe miesięczne sumy przypadały na okres letni, przekraczając 140 mm, natomiast najmniejsze występowały w marcu i kwietniu.
+- Śnieg: najwyższe średnie miesięczne opady odnotowano w styczniu (59 cm) i lutym (71 cm). W lipcu i sierpniu opady śniegu nie występowały.
+- Wiatr: średnia z dobowych maksymalnych prędkości wiatru utrzymywała się na poziomie około 10–14 km/h, z nieco wyższymi wartościami zimą.
+- Zachmurzenie: najwyższe występowało zimą (80–85%), a najniższe latem (około 60%).
+- Nasłonecznienie: najwięcej godzin słonecznych przypadało na okres od maja do lipca, z maksimum w czerwcu (średnio 12,3 godziny dziennie).
 
-Podsumowanie: Rysy wyróżniają się niskimi temperaturami i znacznymi opadami. Lipiec oferuje najłagodniejsze warunki temperaturowe, ale nawet wtedy średnia temperatura wynosi około 7°C.
+Podsumowanie: Rysy charakteryzowały się najniższymi średnimi temperaturami spośród analizowanych szczytów oraz znacznymi opadami. Nawet w najcieplejszym miesiącu, lipcu, średnia temperatura wynosiła zaledwie około 7°C.
 
 ---
 
 ### 4. Ranking warunków pogodowych
+
+Poniższe zestawienie przedstawia szczyty wyróżniające się pod względem poszczególnych parametrów pogodowych w latach 2020–2024.
 
 | Kategoria                      | 1 miejsce        | 2 miejsce        | 3 miejsce        |
 |--------------------------------|------------------|------------------|------------------|
@@ -91,7 +92,7 @@ Podsumowanie: Rysy wyróżniają się niskimi temperaturami i znacznymi opadami.
 
 # Dashboard Power BI
 
-Uzupełnieniem analizy wykonanej w Pythonie jest dwustronicowy, interaktywny dashboard Power BI. Umożliwia porównywanie warunków pogodowych na szczytach oraz analizę ich sezonowości w latach 2020–2024.
+Uzupełnieniem analizy jest dashboard Power BI. Umożliwia porównywanie warunków pogodowych na szczytach oraz analizę ich sezonowości w latach 2020–2024.
 
 **[📊 Pobierz dashboard Power BI](dashboard/Dashboard%20-%20pogoda.pbix)**
 
