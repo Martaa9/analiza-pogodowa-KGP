@@ -36,7 +36,7 @@ Dla Śnieżki, jedynego szczytu KGP, na którym znajduje się obserwatorium mete
 
 ### 1. Wskaźnik komfortu pogodowego
 
-Na potrzeby projektu opracowano wskaźnik komfortu pogodowego, umożliwiający analizę sezonowej zmienności warunków na szczytach Korony Gór Polski
+Na potrzeby projektu opracowano wskaźnik komfortu pogodowego, umożliwiający analizę sezonowej zmienności warunków na szczytach Korony Gór Polski.
 Został on zbudowany w oparciu o cztery elementy:
 - temperaturę 35% (najwyższy komfort przy umiarkowanych wartościach, 10–18°C),
 - opady 30% (im niższe, tym wyższy komfort),
@@ -69,7 +69,7 @@ Wszystkie zmienne przeskalowano do wspólnego zakresu 0–100, a następnie poł
 - Opady: największe miesięczne sumy przypadały na okres letni, przekraczając 140 mm, natomiast najmniejsze występowały w marcu i kwietniu.
 - Śnieg: najwyższe średnie miesięczne opady odnotowano w styczniu (59 cm) i lutym (71 cm). W lipcu i sierpniu opady śniegu nie występowały.
 - Wiatr: średnia z dobowych maksymalnych prędkości wiatru utrzymywała się na poziomie około 10–14 km/h, z nieco wyższymi wartościami zimą.
-- Zachmurzenie: najwyższe występowało zimą (80–85%), a najniższe latem (około 60%).
+- Zachmurzenie: najwyższe występowało zimą (78-80%), a najniższe latem (około 62%).
 - Nasłonecznienie: najwięcej godzin słonecznych przypadało na okres od maja do lipca, z maksimum w czerwcu (średnio 12,3 godziny dziennie).
 
 Podsumowanie: Rysy charakteryzowały się najniższymi średnimi temperaturami spośród analizowanych szczytów oraz znacznymi opadami. Nawet w najcieplejszym miesiącu, lipcu, średnia temperatura wynosiła zaledwie około 7°C.
