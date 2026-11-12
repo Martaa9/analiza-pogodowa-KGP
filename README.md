@@ -20,34 +20,34 @@ Wyniki przedstawiono na wykresach w Pythonie oraz w dashboardzie Power BI.
 - Źródło: Open-Meteo API
 - Okres analizy: 2020–2024
 - Zakres: 28 szczytów Korony Gór Polski
-- Agregacja: dane dobowe przekształcone do wartości miesięcznych
+- Agregacja: dane dobowe zagregowane do wartości miesięcznych - średnie dla temperatury, wiatru, zachmurzenia i dziennego nasłonecznienia oraz sumy dla opadów deszczu i śniegu.
 - Zmienne: średnia, minimalna i maksymalna temperatura dobowa (°C), suma opadów (mm), opad śniegu (cm), maksymalna dobowa prędkość wiatru (km/h), czas nasłonecznienia i zachmurzenie (%)
 
 Dane Open-Meteo mają charakter siatkowy, co oznacza, że wartości pogodowe są wyznaczane na podstawie interpolacji z modeli numerycznych w regularnych punktach siatki, a nie pochodzą bezpośrednio ze stacji pomiarowych, co może wpływać na ich dokładność.
-Dla Śnieżki, jedynego szczytu KGP na którym znajduje się obserwatorium meteorologiczne, przeprowadzono porównanie danych siatkowych Open-Meteo z danymi stacyjnymi IMGW. W badanym okresie średnia różnica wyniosła –0,41°C. Wartość błędu RMSE, czyli przeciętne odchylenie wartości siatkowych od pomiarów stacyjnych, wynosiło około 1,4°C. Na tej podstawie uznano, że nie ma potrzeby stosowania korekty temperatur dla wszystkich szczytów i dane Open-Meteo można uznać za wystarczająco wiarygodne do celów projektu.
+Dla Śnieżki, jedynego szczytu KGP, na którym znajduje się obserwatorium meteorologiczne, przeprowadzono porównanie danych siatkowych Open-Meteo z danymi stacyjnymi IMGW. W badanym okresie średnia różnica wyniosła –0,41°C. Wskaźnik RMSE, będący miarą wielkości różnic między danymi siatkowymi a pomiarami stacyjnymi, wyniósł około 1,4°C. Uzyskane wyniki wskazują na stosunkowo dobrą zgodność danych Open-Meteo z pomiarami IMGW dla Śnieżki. Na potrzeby projektu zdecydowano się więc wykorzystać dane siatkowe bez dodatkowej korekty temperatury.
 
 # Metody i narzędzia 
 
-- **Python (pandas, requests, matplotlib)** – pobranie danych z API, przygotowanie miesięcznych agregacji, analiza i wizualizacja.
+- **Python (pandas, requests, matplotlib, seaborn)** – pobranie danych z API, przygotowanie miesięcznych agregacji, analiza i wizualizacja.
 - **Analiza danych** – badanie sezonowości, porównania szczytów i regionów, rankingi oraz wskaźnik komfortu pogodowego.
-- **Power BI i DAX** – interaktywny dashboard umożliwiający porównywanie szczytów i analizę sezonowych odchyleń.
+- **Power BI (Power Query, DAX)** – interaktywny dashboard umożliwiający porównywanie szczytów i analizę sezonowych odchyleń.
 
 # Wnioski z analizy
 
 ### 1. Wskaźnik komfortu pogodowego
 
-Na potrzeby projektu opracowano autorski wskaźnik komfortu pogodowego, pozwalający porównać warunki na poszczególnych szczytach Korony Gór Polski.
+Na potrzeby projektu opracowano wskaźnik komfortu pogodowego, umożliwiający analizę sezonowej zmienności warunków na szczytach Korony Gór Polski
 Został on zbudowany w oparciu o cztery elementy:
-- temperaturę (najwyższy komfort przy umiarkowanych wartościach, 10–20°C),
-- opady (im niższe, tym wyższy komfort),
-- prędkość wiatru (najwyższy komfort przy niskich wartościach),
-- zachmurzenie (za najbardziej korzystne uznano umiarkowane zachmurzenie).
+- temperaturę 35% (najwyższy komfort przy umiarkowanych wartościach, 10–18°C),
+- opady 30% (im niższe, tym wyższy komfort),
+- prędkość wiatru 20% (najwyższy komfort przy niskich wartościach),
+- nasłonecznienie 15% (im dłuższy czas nasłonecznienia, tym wyższa ocena).
 
-Wszystkie zmienne przeskalowano do wspólnego zakresu 0–100, a następnie połączono z równymi wagami. Uzyskano w ten sposób wskaźnik umożliwiający porównanie komfortu pogodowego pomiędzy szczytami i miesiącami.
+Wszystkie zmienne przeskalowano do wspólnego zakresu 0–100, a następnie połączono z zastosowaniem wag. Oceny opadów, wiatru i nasłonecznienia opierają się na rankingach percentylowych obliczanych osobno dla każdego szczytu. Wskaźnik służy przede wszystkim do analizy sezonowości i ma charakter orientacyjny.
 
 ![Heatmapa komfortu](plots/comfort/heatmap_all_peaks_colored.png)  
 
-- Najbardziej komfortowe warunki w latach 2020–2024 występowały na szczytach niskich i średnich – najwyższe średnie wartości wskaźnika osiągnęły Chełmiec, Kłodzka Góra, Czupel, Biskupia Kopa i Turbacz.
+- Najwyższe wartości wskaźnika w latach 2020–2024 występowały na szczytach niskich i średnich - najlepsze wyniki osiągnęły Chełmiec, Kłodzka Góra, Czupel, Biskupia Kopa i Turbacz.
 - Szczyty wysokie (Rysy, Śnieżka, Babia Góra) uzyskały wyraźnie niższe wartości wskaźnika.
 - Najkorzystniejszym miesiącem według przyjętego wskaźnika był lipiec. Dobre wyniki osiągały również czerwiec i sierpień, natomiast najniższe wartości przypadały na okres zimowy, szczególnie luty.
 
@@ -80,15 +80,15 @@ Podsumowanie: Rysy charakteryzowały się najniższymi średnimi temperaturami s
 
 Poniższe zestawienie przedstawia szczyty wyróżniające się pod względem poszczególnych parametrów pogodowych w latach 2020–2024.
 
-| Kategoria                      | 1 miejsce        | 2 miejsce        | 3 miejsce        |
-|--------------------------------|------------------|------------------|------------------|
-| **Najbardziej deszczowe (mm)** | Tarnica (108.3)  | Rudawiec (107.7) | Śnieżnik (107.7) |
-| **Najbardziej śnieżne (cm)**   | Rysy (24.7)      | Śnieżka (20.1)   | Tarnica (19.8)   |
-| **Najbardziej wietrzne (km/h)** | Chełmiec (22.3)  | Waligóra (20.9)  | Ślęża (20.1)     |
-| **Najbardziej słoneczne (h)**  | Rysy (28976.2)   | Radziejowa (27551.8) | Ślęża (27297.1) |
-| **Najbardziej pochmurne (%)**  | Śnieżka (73.2)   | Rudawiec (72.0)  | Śnieżnik (72.0)  |
-| **Najcieplejsze (°C)**         | Czupel (9.2)     | Kłodzka Góra (9.1) | Chełmiec (9.1)   |
-| **Najzimniejsze (°C)**         | Rysy (–2.7)      | Śnieżka (1.6)    | Babia Góra (1.6) |
+| Kategoria                            | 1 miejsce        | 2 miejsce            | 3 miejsce        |
+|--------------------------------------|------------------|----------------------|------------------|
+| **Najbardziej deszczowe (mm/mies.)**  | Tarnica (108.3)  | Rudawiec (107.7)     | Śnieżnik (107.7) |
+| **Najbardziej śnieżne (cm/mies.)**    | Rysy (24.7)      | Śnieżka (20.1)       | Tarnica (19.8)   |
+| **Najbardziej wietrzne (km/h)**       | Chełmiec (22.3)  | Waligóra (20.9)      | Ślęża (20.1)     |
+| **Najbardziej słoneczne (h/dzień)**   | Rysy (8.0)       | Radziejowa (7.7)     | Ślęża (7.6)      |
+| **Najbardziej pochmurne (%)**         | Śnieżka (73.2)   | Rudawiec (72.0)      | Śnieżnik (72.0)  |
+| **Najcieplejsze (°C)**                | Czupel (9.2)     | Kłodzka Góra (9.1)   | Chełmiec (9.1)   |
+| **Najzimniejsze (°C)**                | Rysy (–2.7)      | Śnieżka (1.6)        | Babia Góra (1.6) |
 
 # Dashboard Power BI
 
