@@ -7,15 +7,18 @@ df = pd.read_csv(r"D:\Programowanie\analiza-pogodowa-KGP\kgp_all_monthly_clean.c
 # --- średnie roczne dla każdego szczytu ---
 annual_means = df.groupby("Szczyt").mean(numeric_only=True).reset_index()
 
+# --- Konwersja nasłonecznienia z sekund na godziny dziennie ---
+annual_means["sunshine_duration"] = annual_means["sunshine_duration"] / 3600
+
 # --- TOP N w każdej kategorii ---
 def topN(col, ascending=False, n=5):
     return annual_means[["Szczyt", col]].sort_values(col, ascending=ascending).head(n)
 
 rankings = {
-    "Najbardziej deszczowe (mm)": topN("precipitation_sum", ascending=False, n=5),
-    "Najbardziej śnieżne (mm)": topN("snowfall_sum", ascending=False, n=5),
-    "Najbardziej wietrzne (m/s)": topN("windspeed_10m_max", ascending=False, n=5),
-    "Najbardziej słoneczne (h)": topN("sunshine_duration", ascending=False, n=5),
+    "Najbardziej deszczowe (mm/mies.)": topN("precipitation_sum", ascending=False, n=5),
+    "Najbardziej śnieżne (cm/mies.)": topN("snowfall_sum", ascending=False, n=5),
+    "Najbardziej wietrzne (km/h)": topN("windspeed_10m_max", ascending=False, n=5),
+    "Najbardziej słoneczne (h/dzień)": topN("sunshine_duration", ascending=False, n=5),
     "Najbardziej pochmurne (%)": topN("cloudcover_mean", ascending=False, n=5),
     "Najcieplejsze (°C)": topN("temperature_2m_mean", ascending=False, n=5),
     "Najzimniejsze (°C)": topN("temperature_2m_mean", ascending=True, n=5),

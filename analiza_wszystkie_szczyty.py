@@ -18,10 +18,10 @@ m_labels = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII"]
 units = {
     "temperature_2m_mean": "°C",
     "precipitation_sum": "mm",
-    "snowfall_sum": "mm",
-    "windspeed_10m_max": "m/s",
+    "snowfall_sum": "cm",
+    "windspeed_10m_max": "km/h",
     "cloudcover_mean": "%",
-    "sunshine_duration": "h"
+    "sunshine_duration": "h/dzień"
 }
 
 # --- Funkcja do znajdowania ekstremów ---
@@ -42,6 +42,10 @@ def analyze_peak(peak_name, df):
     # Agregacja miesięczna (średnia z lat)
     cols = list(units.keys())
     monthly = df_peak.groupby("month", as_index=False)[cols].mean()
+
+    # Konwersja średniego dziennego czasu nasłonecznienia
+    # z sekund na godziny
+    monthly["sunshine_duration"] = monthly["sunshine_duration"] / 3600
 
     # --- Wykres 2×3 ---
     fig, axes = plt.subplots(2, 3, figsize=(14, 8))
